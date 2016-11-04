@@ -49,5 +49,3 @@ while True:
     elif ob_type.lower == 't':
         pass
 turtle.exitonclick()
-
-      
