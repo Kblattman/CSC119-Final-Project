@@ -31,7 +31,7 @@ class Move:
     '''
     Each Function Moves the_turtle used for event handeling
     '''
-    def u():
+    def u(self):
         the_turtle.seth(270)
         if maze[int(the_turtle.pos()[1])-1][int(the_turtle.pos()[0])] == 1:
             print('collision detected')
@@ -41,7 +41,7 @@ class Move:
             else:
                 the_turtle.fd(1)
                 maze[int(the_turtle.pos()[1])][int(the_turtle.pos()[0])] = 2
-    def d():
+    def d(self):
         the_turtle.seth(90)
         if maze[int(the_turtle.pos()[1])+1][int(the_turtle.pos()[0])] == 1:
             print('collision detected')
@@ -51,7 +51,7 @@ class Move:
             else:
                 the_turtle.fd(1)
                 maze[int(the_turtle.pos()[1])][int(the_turtle.pos()[0])] = 2
-    def l():
+    def l(self):
         the_turtle.seth(180)
         if maze[int(the_turtle.pos()[1])][int(the_turtle.pos()[0])-1] == 1:
             print('collision detected')
@@ -61,7 +61,7 @@ class Move:
             else:
                 the_turtle.fd(1)
                 maze[int(the_turtle.pos()[1])][int(the_turtle.pos()[0])] = 2
-    def r():
+    def r(self):
         the_turtle.seth(0)
         if maze[int(the_turtle.pos()[1])][int(the_turtle.pos()[0])+1] == 1:
             print('collision detected')
@@ -195,11 +195,11 @@ the_turtle.pd()
 the_turtle.dot(4,'green')
 
 ### BEGIN EVENT HANDELING ###
-window.onkey(Move.u, 'Up')
-window.onkey(Move.d, 'Down')
-window.onkey(Move.l, 'Left')
-window.onkey(Move.r, 'Right')
-window.onkey(maze_dump, 'd')
+window.onkey(Move.u(), 'Up')
+window.onkey(Move.d(), 'Down')
+window.onkey(Move.l(), 'Left')
+window.onkey(Move.r(), 'Right')
+window.onkey(maze_dump(), 'd')
 window.onclick(draw_shape)
 
 window.listen()
